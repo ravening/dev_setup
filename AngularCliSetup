@@ -1,0 +1,32 @@
+Steps to install latest angular cli on windows 10
+
+
+Delete the existing ones if any 
+
+npm uninstall -g angular-cli
+npm cache clean
+
+
+Install the dependencies
+
+Install node-gyp from https://github.com/nodejs/node-gyp
+npm install -g node-gyp
+
+Install Windows build tool from https://github.com/felixrieseberg/windows-build-tools
+npm install --global windows-build-tools
+
+This will also install python
+
+Install Angular-CLI
+npm install -g @angular/cli@latest
+
+
+
+OPtional
+
+Also, most likely you want to also update your local project version, because inside your project directory it will be selected with higher priority than the global one:
+
+rm -rf node_modules
+npm uninstall --save-dev angular-cli
+npm install --save-dev @angular/cli@latest
+npm install
