@@ -1,0 +1,14 @@
+Use unison to sync between mac and ubuntu
+
+use this link to install unison on headless ubuntu
+
+https://eric.blog/2017/08/25/how-to-install-unison-2-48-on-ubuntu/#comment-32309
+
+
+To install in mac : brew install unison
+
+Documentation is in https://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html
+
+quick way to run is
+
+unison -auto <source dir in local machine> ssh://root@<destination IP>/<destination dir name> &
