@@ -1,0 +1,21 @@
+Use syncthing to sync files between mac and windows
+
+install syncthing on both windows and mac
+
+open syncthing in mac in browser and in standalone app in windows
+
+Setup
+
+1. Do the following on MAC
+
+click on "Actions" and select "show id"
+Copy the uuid shown in the popup
+
+2. Now goto windows machine
+
+In the main window, click on "Add Remote Device" under remote devices section
+Enter the ID copied in the first step in the "Device ID" box .
+Configure the remaining things like name, refresh interval and the default sharing folders.
+
+
+3. Now do the vice versa to add windows machine in mac
