@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Uncomment the following two lines for normal desktop:
+# unset SESSION_MANAGER
+# exec /etc/X11/xinit/xinitrc
+
+xrdb $HOME/.Xresources
+vncconfig -iconic &
+startxfce4 &
