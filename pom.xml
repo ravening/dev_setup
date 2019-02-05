@@ -1,0 +1,11 @@
+# Important dependencies for intellij
+
+
+1. To make junit5 work in intellij
+
+<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.3.2</version>
+			<scope>test</scope>
+		</dependency>
