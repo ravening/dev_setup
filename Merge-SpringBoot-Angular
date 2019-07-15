@@ -1,0 +1,58 @@
+This file explains how to integrate the Spring boot backend project with the frontend Angular 2+ project so that you need just one port number to access the application
+
+1. Create a spring boot project normally using spring initializer or any other method
+
+2. In the top of the folder create a subdirectory called "frontend"
+
+3. cd to "frontend" and create the angular app
+
+4. Once all the development is done we need to instruct maven to build the frontend project first
+   and then include the compiled files into "src/main/resources/public" folder
+   
+5. To do so change the content in "angular.json" file of your frontend project
+
+"outputPath": "../src/main/resources/public/",
+
+
+6. Once that is done, you need to instruct the maven to include those packages while building the backend application
+
+7. Add the below contents to your "pom.xml"
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>ng</executable>
+                    <workingDirectory>frontend</workingDirectory>
+                    <arguments>
+                        <argument>build</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+8. Now cd to the top of your project
+
+9. Build the project using the command
+
+mvn package
+
+10. The new packages are stored in target/ folder
+
+11. Start the application using
+
+java -jar target/<filename>.jar
