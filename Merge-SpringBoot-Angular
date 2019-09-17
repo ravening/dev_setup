@@ -9,9 +9,9 @@ This file explains how to integrate the Spring boot backend project with the fro
 4. Once all the development is done we need to instruct maven to build the frontend project first
    and then include the compiled files into "src/main/resources/public" folder
    
-5. To do so change the content in "angular.json" file of your frontend project
+5. To do so change the content in "angular.json" file of your frontend project assuming that your angular project is created in frontend/<angular project name>
 
-"outputPath": "../src/main/resources/public/",
+"outputPath": "../../src/main/resources/public/",
 
 
 6. Once that is done, you need to instruct the maven to include those packages while building the backend application
@@ -21,6 +21,8 @@ This file explains how to integrate the Spring boot backend project with the fro
 
     <build>
         <plugins>
+        ...
+        ...
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -35,19 +37,29 @@ This file explains how to integrate the Spring boot backend project with the fro
                 </executions>
                 <configuration>
                     <executable>ng</executable>
-                    <workingDirectory>frontend</workingDirectory>
+                    <workingDirectory>frontend/<INSERT YOUR ANGULAR PROJECT NAME HERE></workingDirectory>
                     <arguments>
                         <argument>build</argument>
                     </arguments>
                 </configuration>
             </plugin>
+            ...
+            ...
         </plugins>
     </build>
 
 
-8. Now cd to the top of your project
+8. Add the below line in <build> section to generate the jar file without any version. If you want the version then ignore this.
 
-9. Build the project using the command
+```<build>
+...
+...
+<finalName>${project.artifactId}</finalName>
+<build>```
+
+9. Now cd to the top of your project
+
+10. Build the project using the command
 
 mvn package
 
