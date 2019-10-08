@@ -1,4 +1,4 @@
-# Minikube and kubectl commands
+# Minikube commands
 
 ## version
 ```bash
@@ -15,6 +15,11 @@ minikube status
 minikube start
 ```
 
+## start minikube with different kubernetes version
+```bash
+minikube start --vm-driver=none --kubernetes-version="v1.6.0"
+```
+
 ## stop minikube
 ```
 minikube stop
@@ -25,17 +30,17 @@ minikube stop
 minikube delete
 ```
 
-## get context
+## list addons
 ```bash
-ubectl config current-context
+minikube addons list
 ```
 
-## get nodes
+## Enable an addon
 ```bash
-kubectl get nodes
+minikube addons enable logviewer
 ```
 
-## list pods
+## Disable an addon
 ```bash
-kubectl get pods --all-namespaces
+minikube addons disable logviewer
 ```
