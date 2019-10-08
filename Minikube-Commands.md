@@ -44,3 +44,8 @@ minikube addons enable logviewer
 ```bash
 minikube addons disable logviewer
 ```
+
+## Start dashboard
+```bash
+minikube dashboard --url
+```

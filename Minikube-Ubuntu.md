@@ -49,6 +49,10 @@ chmod +x docker-machine-driver-kvm2
 sudo mv docker-machine-driver-kvm2 /usr/local/bin/
 ```
 
+## Install socat
+```bash
+apt install socat
+```
 
 ## If you are running minkube on VM, run below command
 
