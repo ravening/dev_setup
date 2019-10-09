@@ -36,3 +36,18 @@ openjdk version "1.8.0_222"
 OpenJDK Runtime Environment (build 1.8.0_222-20190711120915.buildslave.jdk8u-src-tar--b08)
 OpenJDK 64-Bit GraalVM CE 19.2.0.1 (build 25.222-b08-jvmci-19.2-b02, mixed mode)
 ```
+
+## Export the path
+```bash
+vi ~/.profile
+
+export GRAALGU=/usr/lib/jvm/graalvm-ce-19.2.0.1/bin
+export PATH=$JAVA_HOME/BIN:$GRAALGU:$PATH
+
+source ~/.profile
+```
+
+## Install native image
+```bash
+gu install native-image
+```
