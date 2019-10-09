@@ -24,6 +24,16 @@ kubectl get nodes
 kubectl get pods --all-namespaces
 ```
 
+## Create pod
+```bash
+kubectl apply -f file.yml
+```
+
+## Use --save-config when you want to use kubectl apply in future
+```bash
+kubectl create -f file.yml --save-config
+```
+
 ## Cluster info
 ```bash
 kubectl cluster-info
@@ -55,7 +65,22 @@ kubectl get deployments
 kubectl run hello-world --image=k8s.gcr.io/echoserver:1.10 --port=8080
 ```
 
-hello-world-d8f6ff57c-p5fnz
+## Port forwarding for nginx
+First run the nginx pod using
+```bash
+kubectl run my-nginx --image=nginx:alpine
+```
+
+Get the pod name and do port forwarding using
+```bash
+kubectl port-forward my-nginx-576bb7cb54-dltp4 8081:80
+```
+
+Access the nginx site by navigating to
+
+http://localhost:8081
+
+
 ## port forwarding to internal port
 ```bash
 kubectl port-forward hello-world-d8f6ff57c-p5fnz 9696:8080
@@ -94,3 +119,19 @@ kubectl describe pods
  ```bash
  kubectl get rc
  ```
+
+## Delete a deployment
+```bash
+kubectl delete deployment my-nginx
+```
+
+## Ssh into container inside a pod
+```bash
+kubectl exec my-nginx -it sh
+```
+
+
+## Edit the yml file
+```bash
+kubectl edit -f nginx.pod.yml
+```
