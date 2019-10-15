@@ -34,6 +34,11 @@ kubectl apply -f file.yml
 kubectl create -f file.yml --save-config
 ```
 
+## update pod
+```
+kubectl apply -f <yamlfile>
+```
+
 ## Cluster info
 ```bash
 kubectl cluster-info
@@ -134,4 +139,33 @@ kubectl exec my-nginx -it sh
 ## Edit the yml file
 ```bash
 kubectl edit -f nginx.pod.yml
+```
+
+## Display pods in namespace
+```bash
+kubectl get pods -n <namespace>
+```
+
+## Display configmap of cluster-info
+```
+kubectl get configmap -n kube-public cluster-info -o yaml
+```
+
+# Namespace
+
+## Create new namespace
+
+```
+kubectl create namespace dev-service1
+```
+
+## Display namespaces
+
+```
+kubectl get namespaces
+```
+
+## Delete namespace
+```
+kubectl delete namespace dev-service1
 ```
