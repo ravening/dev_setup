@@ -169,3 +169,50 @@ kubectl get namespaces
 ```
 kubectl delete namespace dev-service1
 ```
+
+
+# Deployments
+
+## Create a deployment using
+```
+kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml --save-config
+```
+
+## Display the deployment
+```
+kubectl get deployment --show-labels
+```
+
+## Display deployment with particular label
+```
+kubectl get deployment -l app=nginx
+```
+
+## Delete the deployement
+```
+kubectl delete deployment <name>
+```
+
+or
+
+```
+kubectl delete deployment -f <filename>
+```
+
+## Scaling the deployment
+
+```
+kubectl scale deployment <name> --replicas=5
+```
+
+or
+
+```
+kubectl scale -f <filename> --replicas=5
+```
+
+## Describe a deployment
+
+```
+kubectl describe <name>
+```
