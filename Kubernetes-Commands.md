@@ -39,6 +39,27 @@ kubectl create -f file.yml --save-config
 kubectl apply -f <yamlfile>
 ```
 
+## get the name of the pod
+```
+export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+echo $POD_NAME
+```
+
+## Add a label to the pod
+```
+kubectl label pod $POD_NAME app=v1
+```
+
+```
+kubectl get pods -l app=v1
+```
+
+## Accessing the port inside the pod
+```
+kubectl exec -ti $POD_NAME curl localhost:8080
+```
+
+
 ## Cluster info
 ```bash
 kubectl cluster-info
@@ -146,6 +167,11 @@ kubectl edit -f nginx.pod.yml
 kubectl get pods -n <namespace>
 ```
 
+## Display pod with specific labels
+```
+kubectl get pods --selector="run=load-balancer-example" -o wide
+```
+
 ## Display configmap of cluster-info
 ```
 kubectl get configmap -n kube-public cluster-info -o yaml
@@ -215,4 +241,79 @@ kubectl scale -f <filename> --replicas=5
 
 ```
 kubectl describe <name>
+```
+
+## Port forwarding for a deployment
+```
+kubectl port-forward deployment/<deployment name> 8080
+```
+
+# Serives
+
+## Display the services
+```
+kubectl get services
+```
+
+
+## port forwarding to a service
+```
+kubectl port-forward service/<service name> 8080
+```
+
+## Expose deployment on an extenal port of node
+```
+kubectl expose deployment<deployment name> --type="NodePort" --port 8080
+```
+or
+
+```
+kubectl expose deployment hello-world --type=NodePort --name=example-service
+```
+
+Now export the nodeport
+```
+export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}')
+```
+
+Access the port
+```
+curl $(minikube ip):$NODE_PORT
+```
+
+## Describe services with label
+```
+kubectl get services -l <label name>
+```
+
+## Deleting the service
+```
+kubectl delete service <service name>
+```
+
+```
+kubectl delete service -l <label name>
+```
+
+
+# Troubleshooting
+
+## Unable to run command inside a pod
+
+```
+OCI runtime exec failed: exec failed: container_linux.go:348: starting container process caused "exec: \"/bin/bash\": stat /bin/bash: no such file or directory": unknown
+command terminated with exit code 126
+```
+
+Install curl inside a pod and run again
+
+```
+kubectl exec -it my-nginx -- ./bin/sh
+apk add curl
+curl localhost:80
+```
+
+Now run it from outside
+```
+kubectl exec -it <pod name> -- curl localhost:80
 ```
