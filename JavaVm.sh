@@ -31,6 +31,10 @@ systemctl status docker
 # Run the below command manually at the end to login to docker hub
 # docker login
 
+# Install docker-compose
+
+apt install docker-compose -y
+
 # Install nodejs
 
 sudo apt-get install curl
