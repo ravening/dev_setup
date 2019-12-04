@@ -55,3 +55,5 @@ npm install -g yo@latest
 apt install maven -y
 
 
+# Install mysql
+apt install mysql-server -y
