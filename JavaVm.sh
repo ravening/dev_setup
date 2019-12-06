@@ -7,9 +7,9 @@
 
 apt-get update && apt-get upgrade -y
 
-apt install openjdk-8-jre-headless
+apt install openjdk-8-jre-headless -y
 
-sudo apt install openjdk-8-jdk
+sudo apt install openjdk-8-jdk -y
 
 
 # Install docker
@@ -26,7 +26,7 @@ apt-cache policy docker-ce
 
 apt install docker-ce -y
 
-systemctl status docker
+#systemctl status docker
 
 # Run the below command manually at the end to login to docker hub
 # docker login
@@ -37,7 +37,7 @@ apt install docker-compose -y
 
 # Install nodejs
 
-sudo apt-get install curl
+sudo apt-get install curl -y
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 
 apt-get install nodejs -y
