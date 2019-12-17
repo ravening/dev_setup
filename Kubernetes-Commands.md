@@ -3,6 +3,12 @@
 ## cheat sheet
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
+## Contexts
+'''bash
+kubectl config set-context my-context --namespace=my stuff
+
+Kubectl config use-context my-context
+'''
 
 ## get version
 ```bash
@@ -28,6 +34,11 @@ kubectl get pods --all-namespaces
 ```bash
 kubectl apply -f file.yml
 ```
+
+## logs
+'''bash
+kubectl logs <pod name>
+'''
 
 ## Use --save-config when you want to use kubectl apply in future
 ```bash
@@ -58,6 +69,11 @@ kubectl get pods -l app=v1
 ```
 kubectl exec -ti $POD_NAME curl localhost:8080
 ```
+
+## copy files from/to pod
+'''bash
+Kubectl cp <pod>:/path/remote /path/local
+'''
 
 
 ## Cluster info
