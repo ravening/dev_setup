@@ -3,12 +3,6 @@
 ## cheat sheet
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
-## Contexts
-'''bash
-kubectl config set-context my-context --namespace=my stuff
-
-Kubectl config use-context my-context
-'''
 
 ## get version
 ```bash
@@ -18,6 +12,10 @@ kubectl version -o json
 ## get context
 ```bash
 kubectl config current-context
+
+kubectl config set-context my-context --namespace=my stuff
+
+Kubectl config use-context my-context
 ```
 
 ## get nodes
