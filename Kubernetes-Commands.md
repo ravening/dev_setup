@@ -34,9 +34,9 @@ kubectl apply -f file.yml
 ```
 
 ## logs
-'''bash
+```bash
 kubectl logs <pod name>
-'''
+```
 
 ## Use --save-config when you want to use kubectl apply in future
 ```bash
@@ -69,9 +69,9 @@ kubectl exec -ti $POD_NAME curl localhost:8080
 ```
 
 ## copy files from/to pod
-'''bash
+bash
 Kubectl cp <pod>:/path/remote /path/local
-'''
+```
 
 
 ## Cluster info
