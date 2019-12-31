@@ -69,7 +69,7 @@ kubectl exec -ti $POD_NAME curl localhost:8080
 ```
 
 ## copy files from/to pod
-bash
+```bash
 Kubectl cp <pod>:/path/remote /path/local
 ```
 
