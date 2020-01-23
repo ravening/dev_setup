@@ -3,6 +3,30 @@
 ## cheat sheet
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
+## Important kubectl plugins
+
+### k9s
+```bash
+brew install derailed/k9s/k9s
+```
+
+### kubectx
+```bash
+brew install kubectx
+```
+
+### kube-ps1
+```bash
+brew install kube-ps1
+
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
+```
+
+### popeye
+```bash
+brew install derailed/popeye/popeye
+```
 
 ## get version
 ```bash
