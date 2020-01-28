@@ -1,13 +1,16 @@
 <plugins>
   <plugin>
     <groupId>com.google.cloud.tools</groupId>
-		<artifactId>jib-maven-plugin</artifactId>
+    <artifactId>jib-maven-plugin</artifactId>
     <version>1.8.0</version>
-		<configuration>
-         <to>
-               <image>springbootjib</image>
-         </to>
-    </configuration>
+    <configuration>
+	<container>
+		<useCurrentTimestamp>true</useCurrentTimestamp>
+	</container>
+        <to>
+         	<image>springbootjib</image>
+        </to>
+   </configuration>
   </plugin>
 </plugins>
 
