@@ -129,6 +129,16 @@ kubectl get deployments
 kubectl run hello-world --image=k8s.gcr.io/echoserver:1.10 --port=8080
 ```
 
+### create deployment from image
+```bash
+kubectl create deployment <deployment name> --image <dockerhub username>/<image name> -n demo
+```
+
+### Create a service for deployment and export node
+```bash
+kubectl expose deployment <deployment name> --type=LoadBalancer --port 5555 --target-port 5555 -n demo
+```
+
 ## Port forwarding for nginx
 First run the nginx pod using
 ```bash
