@@ -5,3 +5,30 @@ Group - core,apps,storage
 version - v1, beta,alpha
 
 
+Api groups
+
+core pai
+named api
+
+
+core api
+- pod
+- node
+- namespace
+- persistent volume
+- persistent volume claim
+
+
+named api
+
+apps - deployment
+storage.k8s.io - StorageClass
+rbac.authorization.k8s.io - Role
+
+
+Api is versioned. Enables forward change
+
+Alpha -> Beta -> Stable
+
+No direct relation to release versions
+
