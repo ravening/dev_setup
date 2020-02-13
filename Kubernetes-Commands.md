@@ -44,9 +44,32 @@ kubectl config set-context my-context --namespace=my stuff
 Kubectl config use-context <my-context>
 ```
 
+## List supported api versions
+```bash
+kubectl api-versions
+```
+
 ## List api resources
 ```bash
 kubectl api-resources
+
+kubectl api-resources --api-group=apps
+```
+
+## Send curl request to server
+```bash
+First the kube proxy server in background
+
+kubectl proxy &
+
+Note down the port on which it started. Lets say 8001. Now send the curl request
+
+curl http://localhost:8001/api/v1/namespaces/default/pods
+
+
+To watch the logs for a pod
+
+curl http://localhost:8001/api/v1/namespaces/default/pods/quarkus-greetings-b7d4b975b-2thvs/log?follow=true
 ```
 
 ## get nodes
@@ -64,6 +87,12 @@ kubectl explain pods.spec.containers
 ## list pods
 ```bash
 kubectl get pods --all-namespaces
+
+
+Get more verbose details about the reqeust for pod
+
+
+kubectl get pod <podname> -v <6|7|8|9>
 ```
 
 ## Create pod
@@ -76,9 +105,18 @@ kubectl apply -f file.yml
 kubectl run quarkus-greetings --image=docker.io/rakgenius/quarkus-greetings:latest
 ```
 
+## Watch the pod activities
+```bash
+kubectl get pods --watch -v <6|7|8|9>
+```
+
 ## logs
 ```bash
-kubectl logs <pod name>
+kubectl logs -f <pod name>
+
+More verbosity
+
+kubectl logs -f <pod name> -v <6|7|8|9>
 ```
 
 ## Use --save-config when you want to use kubectl apply in future
@@ -148,6 +186,10 @@ kubectl get deployments
 
 ## create deployement
 ```bash
+kubectl explain deployment
+
+kubectl explain deployment --api-version apps/v1
+
 kubectl run hello-world --image=k8s.gcr.io/echoserver:1.10 --port=8080
 ```
 
