@@ -7,8 +7,21 @@ version - v1, beta,alpha
 
 Api groups
 
-core pai
+core api (legacy) 
+ - (http://APISERVER:APISERVERPORT/api/$VERSION/$RESOURCE_TYPE)
+ - for namespace (http://APISERVER:APISERVERPORT/api/$VERSION/$RESOURCE_TYPE/namespaces/$NAMESPACE/$RESOURCE_TYPE/$RESOURCE_NAME)
+
+
 named api
+- http://APISERVER:APISERVERPORT/api/$GROUPNAME/$VERSION/$RESOURCE_TYPE
+- http://APISERVER:APISERVERPORT/api/$GROUPNAME/$VERSION/namespaces/$NAMESPACE/$RESOURCE_TYPE/$RESOURCE_NAME
+
+
+
+Response code
+200 - success
+400 - client error
+500 -server error
 
 
 core api
@@ -32,3 +45,6 @@ Alpha -> Beta -> Stable
 
 No direct relation to release versions
 
+Any http client which follows the api can send request to kubernetes server and not only kubectl
+
+Each resource has a resourceVersion
