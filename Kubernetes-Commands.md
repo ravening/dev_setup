@@ -35,16 +35,30 @@ kubectl version -o json
 
 ## get context
 ```bash
+kubectl config get-contexts
+
 kubectl config current-context
 
 kubectl config set-context my-context --namespace=my stuff
 
-Kubectl config use-context my-context
+Kubectl config use-context <my-context>
+```
+
+## List api resources
+```bash
+kubectl api-resources
 ```
 
 ## get nodes
 ```bash
 kubectl get nodes
+```
+
+## Get docs about pods
+```bash
+kubectl explain pods
+kubectl explain pods.spec
+kubectl explain pods.spec.containers
 ```
 
 ## list pods
@@ -55,6 +69,11 @@ kubectl get pods --all-namespaces
 ## Create pod
 ```bash
 kubectl apply -f file.yml
+```
+
+## Creating pod from docker image
+```bash
+kubectl run quarkus-greetings --image=docker.io/rakgenius/quarkus-greetings:latest
 ```
 
 ## logs
@@ -101,6 +120,9 @@ Kubectl cp <pod>:/path/remote /path/local
 ## Cluster info
 ```bash
 kubectl cluster-info
+
+Kubernetes master is running at https://10.1.1.5:6443
+KubeDNS is running at https://10.1.1.5:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
 
 ## Proxy
