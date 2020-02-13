@@ -48,3 +48,24 @@ No direct relation to release versions
 Any http client which follows the api can send request to kubernetes server and not only kubectl
 
 Each resource has a resourceVersion
+
+
+
+Organizing objects
+- annotations, labels and namespaces
+
+
+Not all objects belongs to namespaces for eg: persistent volumes, nodes
+
+
+Namespaces
+
+
+default, kube-system, kube-public
+
+Namespace must consist of lower case alphanumeric characters or '-', and must start and end with an alphanumeric character
+
+
+
+
+
