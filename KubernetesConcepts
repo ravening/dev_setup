@@ -1,0 +1,7 @@
+Objects are organized as
+
+Kind - Pod, Service, Deployment, Persistenvolumes
+Group - core,apps,storage
+version - v1, beta,alpha
+
+
