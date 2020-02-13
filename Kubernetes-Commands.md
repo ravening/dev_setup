@@ -308,6 +308,18 @@ kubectl get namespaces
 kubectl delete namespace dev-service1
 ```
 
+## Display resources within a namespace
+```bash
+kubectl api-resources --namespaced=true
+kubectl api-resources --namespaced=false
+```
+
+## Display more info about namespace
+```bash
+kubectl describe namespace default
+
+kubectl get all --all-namespaces
+```
 
 # Deployments
 
@@ -406,6 +418,8 @@ kubectl delete service <service name>
 ```
 kubectl delete service -l <label name>
 ```
+
+
 
 
 # Troubleshooting
