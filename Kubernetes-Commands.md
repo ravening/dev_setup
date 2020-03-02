@@ -54,6 +54,10 @@ kubectl api-versions
 kubectl api-resources
 
 kubectl api-resources --api-group=apps
+
+Get which version of deployment is supported
+
+kubectl api-resources | grep deployment
 ```
 
 ## Send curl request to server
