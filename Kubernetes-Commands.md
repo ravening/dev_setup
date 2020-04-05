@@ -500,6 +500,19 @@ kubectl get pods -l 'app notin (mongodb,department)'
 kubectl delete pod -l tier=QA
 ```
 
+# Annotations
+
+## Adding annotation to a pod
+```
+kubectl annotate pod nginx-pod owner=Anthony
+```
+
+## Editing annotation to a pod
+```
+kubectl annotate pod nginx-pod owner=NotAnthony --overwrite
+```
+
+
 # Troubleshooting
 
 ## Unable to run command inside a pod
