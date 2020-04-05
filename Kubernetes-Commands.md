@@ -58,6 +58,8 @@ kubectl api-resources --api-group=apps
 Get which version of deployment is supported
 
 kubectl api-resources | grep deployment
+
+kubectl api-resources --namespaced=true
 ```
 
 ## Send curl request to server
@@ -423,6 +425,23 @@ kubectl delete service <service name>
 kubectl delete service -l <label name>
 ```
 
+
+# Labels
+
+## Adding label to pod
+```
+kubectl label pod nginx tier=PROD app=v1
+```
+
+## Changing the label
+```
+kubectl label pod nginx tier=TEST app=v2 --overwrite
+```
+
+## Deleting individual label
+```
+kubectl label pod nginx app-
+```
 
 
 
