@@ -84,3 +84,22 @@ Annotations are key value pair used to add additional information to resource
 
 Annotatations cant be used query pods or resources
 key length can be 63 value lengths are 256kb
+
+
+
+Pods:
+
+Contains one or more containers
+Unit of scheduling/deployment
+
+Controllers keep pods in desired state. They stop/start the pods. used for scaling
+Not good to run bare/naked pods which means they are not under the control of replication set
+
+
+
+Multiple container pods:
+
+Need to be careful about port conflicts
+volumes are defined at pod level. shared among containers in pod. common way for containers to share data
+
+
