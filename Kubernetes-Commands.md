@@ -443,6 +443,26 @@ kubectl label pod nginx tier=TEST app=v2 --overwrite
 kubectl label pod nginx app-
 ```
 
+## Disaplying labels for resources
+```
+kubectl get all --show-labels
+```
+
+## Displaying pods using specific label
+```
+kubectl get pods --selector tier=PROD
+```
+
+
+## Displaying pods using multiple labels
+```
+kubectl get pods -l 'app in (mongodb,department)'
+```
+
+## Displaying pods which does not match labels
+```
+kubectl get pods -l 'app notin (mongodb,department)'
+```
 
 
 # Troubleshooting
