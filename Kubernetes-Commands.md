@@ -155,11 +155,17 @@ kubectl get pods -l app=v1
 kubectl exec -ti $POD_NAME curl localhost:8080
 ```
 
+Use --container CONTAINER_NAME if the pod has multiple containers
+
 ## copy files from/to pod
 ```bash
 Kubectl cp <pod>:/path/remote /path/local
 ```
 
+## Get event details
+```
+kubectl get events --watch
+```
 
 ## Cluster info
 ```bash
@@ -197,6 +203,12 @@ kubectl explain deployment
 kubectl explain deployment --api-version apps/v1
 
 kubectl run hello-world --image=k8s.gcr.io/echoserver:1.10 --port=8080
+```
+
+## Scaling a deployment
+
+```
+kubectl scale deployment hello-world --replicas=2
 ```
 
 ### create deployment from image
