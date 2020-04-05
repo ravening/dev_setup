@@ -76,3 +76,11 @@ Influencing pod scheduling
 Using labels we can deploy pods on specific hardware
 Services sends http requests to pods using labels
 
+
+"nodeSelector" tells the scheduler where to deploy the pod
+
+
+Annotations are key value pair used to add additional information to resource
+
+Annotatations cant be used query pods or resources
+key length can be 63 value lengths are 256kb
