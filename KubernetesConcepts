@@ -68,4 +68,6 @@ Namespace must consist of lower case alphanumeric characters or '-', and must st
 
 
 
+Labels are key value apirs
+Max lenght of key is 63 and max length of value is 253
 
