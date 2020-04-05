@@ -433,9 +433,27 @@ kubectl delete service -l <label name>
 kubectl label pod nginx tier=PROD app=v1
 ```
 
+## Adding label to multiple pods
+```
+kubectl label pod --all tier=PROD
+```
+
+```
+kubectl get pods --show-labels
+```
+
 ## Changing the label
 ```
 kubectl label pod nginx tier=TEST app=v2 --overwrite
+```
+
+## Changing the label for multiple pods
+```
+kubectl label pod --all tier=QA --overwrite
+```
+
+```
+kubectl get pods --show-labels
 ```
 
 ## Deleting individual label
@@ -459,11 +477,28 @@ kubectl get pods --selector tier=PROD
 kubectl get pods -l 'app in (mongodb,department)'
 ```
 
+```
+kubectl get pods -l 'tier=prod,app=MyWebApp' --show-labels
+```
+
+```
+kubectl get pods -l 'tier=prod,app!=MyWebApp' --show-labels
+```
+
+## Display column with labels
+```
+kubectl get pods -L tier,app
+```
+
 ## Displaying pods which does not match labels
 ```
 kubectl get pods -l 'app notin (mongodb,department)'
 ```
 
+## Deleting the pods matching a label
+```
+kubectl delete pod -l tier=QA
+```
 
 # Troubleshooting
 
