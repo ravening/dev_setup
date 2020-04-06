@@ -112,4 +112,70 @@ Lifecycle of a pod:
 
 creation -> Running -> Termination
 
+When a pod is destroyed, its not redeployed but its newly created by controller
+
+
+
+Container can restat independent of the pod which is defined in pod's spec
+Kubernetes restarts with exponential backoff of 10s, 20s, 40s, till 5m and reset to 0 after 10m
+
+
+Container restart policy is "always" by default
+Never means it will never restart
+
+We define restart policy on pod level
+
+Pod is ready when all containers in it are running
+
+
+
+
+Two types of container probes:
+livenessProbes
+readinessProbes
+
+
+
+LivenessProbes runs a diagnostic check on container
+On failure, kubelet restarts the pod according to container restart policy
+
+
+
+Readinessprobes also runs diagnostic check
+application wont receive traffic until ready
+On failure, removes the pod from loadbalancing or replication controller but not restarted
+Useful for applications which have long startup time
+
+
+3 ways of checking readiness probe
+exec, tcpSocket and httpGet
+
+Exec measures the process exit code
+
+Tcpsocket checks if it can tcp port on container
+
+
+Httpget checks for return code from an url should be > 200 and < 400 which is a successful check
+
+3 outcomes from these checks
+
+success, failure and unknown
+
+
+
+Configuring probes
+
+initialDelaySeconds
+Number of seconds after the container has started before running container probes
+
+periodSeconds - probe interval. default 10 seconds
+
+
+timeoutSeconds - probe timeout 1 second
+
+failureThreshold - number of failed checks before reporting failure. default is 3
+
+successTHreshold - number of probes to consider of success. default 1
+
+
 
