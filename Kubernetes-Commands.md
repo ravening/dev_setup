@@ -62,6 +62,11 @@ kubectl api-resources | grep deployment
 kubectl api-resources --namespaced=true
 ```
 
+## Explaining resources
+```
+kubectl explain pods.spec.restartPolicy
+```
+
 ## Send curl request to server
 ```bash
 First the kube proxy server in background
@@ -160,6 +165,11 @@ Use --container CONTAINER_NAME if the pod has multiple containers
 ## copy files from/to pod
 ```bash
 Kubectl cp <pod>:/path/remote /path/local
+```
+
+## Deleting a pod
+```
+kubectl delete pod --grace-period=<seconds> --force
 ```
 
 ## Get event details
