@@ -103,3 +103,13 @@ Need to be careful about port conflicts
 volumes are defined at pod level. shared among containers in pod. common way for containers to share data
 
 
+When we ssh to multicontainer pods, by default it ssh to first container in it. Use "--container <container name>" to ssh
+to particular container
+
+
+
+Lifecycle of a pod:
+
+creation -> Running -> Termination
+
+
