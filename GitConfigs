@@ -1,0 +1,6 @@
+# Below are the mandatory git config you should set up on mac/linux
+
+git config --global core.autocrlf input 
+
+git rm --cached -r .
+git reset --hard
