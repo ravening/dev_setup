@@ -9,7 +9,10 @@ Run the below commands
 ```
 systemctl stop kubelet
 systemctl stop docker
-iptables --flush
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F
 iptables -tnat --flush
 systemctl start kubelet
 systemctl start docker
