@@ -65,10 +65,20 @@ sudo systemctl enable kafka
 # Start the kafka service
 sudo systemctl start kafka
 
+# To create a second broker
+cp config/server.properties config/server.properties.2
+
+# Change the broker id, port the log dir
+broker.id=1
+listeners=PLAINTEXT://localhost:9093
+log.dirs=/tmp/kafka-logs-1
+
 
 # Create a topic to test the installation
 bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic FirstTopic
 
+# or create topics with partitions
+bin/kafka-topics.sh --create --bootstrap-server localhost:9093 --partitions 2 --replication-factor 2 --topic user-tracking
 
 # Now list the topics
 bin/kafka-topics.sh --list --zookeeper localhost:2181
