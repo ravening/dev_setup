@@ -91,6 +91,10 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic FirstTopic
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic FirstTopic --from-beginning
 
 
+# Delete a topic
+./bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic unconfirmed-transactions
+
+
 # Install kafkat
 apt install ruby ruby-dev build-essential -y
 gem install kafkat
