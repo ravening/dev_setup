@@ -1,5 +1,14 @@
 # Apache Spark
 
+## Concepts
+
+Spark context is the driver which manages the jobs. We can create multiple context but not recommended
+RDD - Resilient distributed dataset
+collection of elements partitioned across the nodes of the cluster which can be operated in parallel
+RDD is immutable.
+RDD:DAG:Transformation:Action
+
+
 ## start shell
 ```
 spark-shell
