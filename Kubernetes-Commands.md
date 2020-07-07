@@ -400,7 +400,7 @@ kubectl describe <name>
 kubectl port-forward deployment/<deployment name> 8080
 ```
 
-# Serives
+# Services
 
 ## Display the services
 ```
@@ -415,7 +415,13 @@ kubectl port-forward service/<service name> 8080
 
 ## Expose deployment on an extenal port of node
 ```
-kubectl expose deployment<deployment name> --type="NodePort" --port 8080
+kubectl expose deployment <name> --port 8080 --target-port 8080
+```
+
+or
+
+```
+kubectl expose deployment <deployment name> --type="NodePort" --port 8080
 ```
 or
 
