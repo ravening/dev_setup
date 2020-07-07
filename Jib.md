@@ -2,6 +2,24 @@
 
 Jib is used to build docker image without Dockerfile and push it to docker hub using maven
 
+Configure the username and password in m2 settings file
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+ <servers>
+   <server>
+     <id>docker.io</id>
+     <username><your docker username></username>
+     <password>password</password>
+   </server>
+ </servers>
+</settings>
+```
+
+
 1. Add the below plugin under the plugins component
 
 ```
