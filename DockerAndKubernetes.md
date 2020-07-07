@@ -1,5 +1,7 @@
 # Steps to build docker image and create kubernetes resources using maven
 
+You can find more details in https://github.com/rohanKanojia/eclipse-jkube-demo-project
+
 ## Use below content to create a `Dockerfile`
 ```
 FROM adoptopenjdk/openjdk11:alpine-jre
