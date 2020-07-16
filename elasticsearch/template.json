@@ -1,0 +1,44 @@
+{
+  "mappings": {
+    "_default_": {
+      "dynamic_templates": [
+        {
+          "template1": {
+            "mapping": {
+              "doc_values": true,
+              "ignore_above": 1024,
+              "index": "not_analyzed",
+              "type": "{dynamic_type}"
+            },
+            "match": "*"
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "offset": {
+          "type": "long",
+          "doc_values": "true"
+        },
+        "geoip"  : {
+          "dynamic": true,
+          "properties" : {
+            "location" : { "type" : "geo_point" },
+            "latitude": {
+                "type": "half_float"
+            },
+            "longitude": {
+                "type": "half_float"
+            }
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "template": "logstash-*"
+}
