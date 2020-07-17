@@ -11,3 +11,8 @@ or
 ```
 curl -X GET "localhost:9200/twitter" | jq
 ```
+
+### delete index
+```
+curl -XDELETE localhost:9200/twitter
+```
