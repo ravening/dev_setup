@@ -16,3 +16,11 @@ curl -X GET "localhost:9200/twitter" | jq
 ```
 curl -XDELETE localhost:9200/twitter
 ```
+
+
+## Documents
+
+### search for all documents
+```
+curl http://localhost:9200/cloudstack-api/_search?pretty=true
+```
