@@ -59,22 +59,45 @@ Resource files will be located under
 `target/classes/META-INF/jkube/kubernetes/`
 
 ## Step 2. Add eclipse jkube to generate resources
+
+### Add below line under properties section
+
 ```
-<plugin>
-  <groupId>org.eclipse.jkube</groupId>
-  <artifactId>kubernetes-maven-plugin</artifactId>
-  <version>1.0.0-alpha-3</version>
-  <executions>
-    <execution>
-      <goals>
-        <goal>resource</goal>
-      </goals>
-    </execution>
-  </executions>
-</plugin>
+<properties>
+    <jkube.generator.name>rakgenius/${project.name}:${project.version}</jkube.generator.name>
+</properties>
 ```
 
-## Step3. Build and create
+### Add the below content under plugins section
 ```
-mvn clean package
+<plugins>
+  <plugin>
+    <groupId>org.eclipse.jkube</groupId>
+    <artifactId>kubernetes-maven-plugin</artifactId>
+    <version>1.0.0-alpha-4</version>
+  </plugin>
+<plugins>
+```
+
+## Step3. Build and create docker image
+```
+mvn k8s:build
+```
+
+## If you just want to generate k8s resources and dont want to build docker image then add the below section under profiles
+```
+<plugins>
+  <plugin>
+    <groupId>org.eclipse.jkube</groupId>
+    <artifactId>kubernetes-maven-plugin</artifactId>
+    <version>1.0.0-alpha-4</version>
+    <executions>
+      <execution>
+        <goals>
+          <goal>resource</goal>
+        </goals>
+      </execution>
+    </executions>
+  </plugin>
+<plugins>
 ```
