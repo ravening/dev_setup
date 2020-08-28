@@ -84,6 +84,14 @@ Resource files will be located under
 mvn k8s:build
 ```
 
+## Step 4: Push to docker hub
+
+Push to docker hub using
+```
+mvn k8s:push
+```
+
+
 ## If you just want to generate k8s resources and dont want to build docker image then add the below section under profiles
 ```
 <plugins>
