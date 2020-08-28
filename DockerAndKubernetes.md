@@ -81,6 +81,7 @@ Resource files will be located under
 
 ## Step3. Build and create docker image
 ```
+mvn clean package -DskipTests
 mvn k8s:build
 ```
 
