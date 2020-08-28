@@ -91,6 +91,28 @@ Push to docker hub using
 mvn k8s:push
 ```
 
+## Step 5: Generate kubernetes resource files
+
+```
+mvn k8s:resource
+```
+
+## Step 6: Deploy to kubernetes using
+```
+mvn k8s:apply
+```
+
+
+## Getting the logs
+```
+mvn k8s:log
+```
+
+## Debug the application
+```
+mvn k8s:debug
+```
+
 
 ## If you just want to generate k8s resources and dont want to build docker image then add the below section under profiles
 ```
