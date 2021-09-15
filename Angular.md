@@ -7,10 +7,10 @@ A component can communicate with the template or another child component using <
   
   binding and structural directives
   
-  Interpolation -> {{}}
-  property binding -> < [] = '' >
-  event binding -> <button (click)='func()' >
-  two way bidning -> < [(ngModel)]='' >
+  Interpolation -> {{}} \
+  property binding -> < [] = '' > \
+  event binding -> <button (click)='func()' > \
+  two way bidning -> < [(ngModel)]='' > 
   
   
   Structural directives
