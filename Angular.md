@@ -47,3 +47,25 @@ A component can communicate with the template or another child component using <
   then ngif will be empty and accessing the element will throw error
   
   
+## Communication between parent and child
+  
+  Use Input to pass data from parent to child \
+  In parent html \
+  [child property name] = 'parent property name' \
+  
+  In child component \
+  @Input() childvariableName;
+  
+  Waiting for changes on the input property in child component
+  
+  we can use gettter and setter
+  
+  @Input() \
+  set hitcount(value: number) { \
+    this._hitCount = value; \
+  }
+  
+  Or use ngOnChanges from OnChanges lifecycle hook which takes a parameter of type SimpleChanges. \
+  This works only with the input property and so works only in the child component.
+  
+  Or we can use template reference variable
