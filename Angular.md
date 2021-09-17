@@ -74,3 +74,11 @@ A component can communicate with the template or another child component using <
   Child to parent communication is done throgh
   
   @Output event emitter
+
+## Communicating through service
+  
+  property bag \
+  basic state management \
+  state management with notification
+  
+  
