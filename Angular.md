@@ -69,3 +69,8 @@ A component can communicate with the template or another child component using <
   This works only with the input property and so works only in the child component.
   
   Or we can use template reference variable
+  
+  
+  Child to parent communication is done throgh
+  
+  @Output event emitter
