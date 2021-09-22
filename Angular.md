@@ -33,7 +33,7 @@ A component can communicate with the template or another child component using <
   doesnt work with server side rendering \
   viewchild is used to get a reference for a directive in the template \
   we can access the referred html element in ngAfterViewInit lifecycle hook \
-  @viewChild('filterRef') filteredRef; \
+  @viewChild('filterRef') filteredRef;
   
   <input type='text' #filterRef ....>
   
@@ -51,7 +51,7 @@ A component can communicate with the template or another child component using <
   
   Use Input to pass data from parent to child \
   In parent html \
-  [child property name] = 'parent property name' \
+  [child property name] = 'parent property name'
   
   In child component \
   @Input() childvariableName;
@@ -81,4 +81,82 @@ A component can communicate with the template or another child component using <
   basic state management \
   state management with notification
   
+  getters are used to notify any component using angular change notification system. \
+  Just bind the property name with the getter and whenever that value is changed, \
+  the template is notified of it
+  
+  
+  Notifications can be braodcast using
+  
+  EventEmitter \
+  Subject \
+  BehaviorSubject
+  
+  EventEmitter should be used with Output keyword. EventEmitter can be used only between parent and child \
+  Hence it cant be used in a service. 
+  
+  A Subject is a special type of Observable that can multicast the events to multiple subscribers. \
+  The source component can uupdate the data using the Subject's next method and then the Subject \
+  will send out the notification to all subscribers.
+  
+  Postfixing $ to any variable indicates that its an observable and not a simple protperty 
+  
+  BehaviorSubject is different from Subject in two aspects 
+  1. It needs an initial value 
+  2. Provides the current value on a new subscription
+  
+  
+  Communicating using router
+  
+  Angular routing provides three parameters 
+  1. required : Use this when route requires a parameter Ex: /products/:id. Use either [routerLink] or this.route.navigate \
+     the passed id can be fetched using this.route.snapshot.paramMap.get('id')
+  2. Optional: We dont pass parameters in path definition but values can be passed in the code. \
+      They can be specified as key and value pairs using {} 
+  3. Query: They are passed as separate parameter using [queryParams] along with [routerLink] or {queryParams: {}} \
+     Fetch the values using queryParamMap.get() 
+     Data is retained across routes
+  
+  
+### Summary
+  
+  #### Component to template
+  
+  Binding 
+  Structural directive 
+  viewchild/viewchildren with template reference and native element or with NgForm or NgModel 
+  
+  change notification 
+  two way binding 
+  getters and setters 
+  viewchild and valuechanges observable 
+  
+  #### component to child component
+  
+  @Input 
+  template reference variable 
+  viewChild decorator
+  
+  Change notification
+  
+  getters and setters 
+  onChanges lifecycle hook
+  
+  child to parent 
+  @Output
+  
+  #### component to component
+  
+  simple properties 
+  getters and setters 
+  state management 
+  subject 
+  behaviorsubject 
+  ngrx
+  
+  Routers
+  
+  Required 
+  optional 
+  query parameters
   
