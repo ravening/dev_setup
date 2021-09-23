@@ -167,6 +167,7 @@ A component can communicate with the template or another child component using <
   RouterOutlet decides where to display the template 
   RouterModule provides two methods 
   1. forRoot and forChild 
+  No leading slashes 
   forRoot registers the router service and used once for the application   
   forChild doest not registers the router service and its used in feature modules  
   Order of the routes in the array matters. 
@@ -174,14 +175,18 @@ A component can communicate with the template or another child component using <
   Redirects cannot be chained. they can be absolute or relative  
   Components template is displayed under <router-outlet>  
 
-  Browser url styles
+  Browser url styles 
 
-  html5 (/welcome) 
-  uses pushState without triggering server request
-  Are used by default 
+  html5 (/welcome)  
+  uses pushState without triggering server request 
+  Are used by default  
+  Requires url rewriting  
+  
 
 
-
-  Hash based (/#/welcome) 
-  uses url fragments 
+  Hash based (/#/welcome)  
+  uses url fragments  
+  must be set with {userHash: true} for RouterModule.forRoot()  
+  doesnt require url rewriting  
+  
   
