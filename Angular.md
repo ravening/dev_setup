@@ -160,3 +160,28 @@ A component can communicate with the template or another child component using <
   optional 
   query parameters
   
+
+  
+## Angular routing
+  
+  RouterOutlet decides where to display the template 
+  RouterModule provides two methods 
+  1. forRoot and forChild 
+  forRoot registers the router service and used once for the application   
+  forChild doest not registers the router service and its used in feature modules  
+  Order of the routes in the array matters. 
+  More specific should always be before less specific  
+  Redirects cannot be chained. they can be absolute or relative  
+  Components template is displayed under <router-outlet>  
+
+  Browser url styles
+
+  html5 (/welcome) 
+  uses pushState without triggering server request
+  Are used by default 
+
+
+
+  Hash based (/#/welcome) 
+  uses url fragments 
+  
