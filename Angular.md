@@ -189,4 +189,29 @@ A component can communicate with the template or another child component using <
   must be set with {userHash: true} for RouterModule.forRoot()  
   doesnt require url rewriting  
   
+  if we navigate using router.navigate then it retains the seconary route 
+  but if we navigate using router.navigteByUrl then it wont retian the secondary route.
+  
+  the routes defined the feature modules are processed first and the the routes mentioned 
+  in the app-routing.module.ts are processed later. So the wildcard route mentioned in the 
+  main app module is always processed at the end 
+  So the module names which are mentioned in `imports` array take precedence over the routes 
+  explicitly mentioned in that file
+  
+  
+  ### passing data between routes
+  
+  if only the parameter value in the url changes then the component is reused and not reinitialized 
+  the ngOnInit function is not called again. In that case we need to watch for the parameter change 
+  using an observable.
+  All route details are in ActivatedRoute service 
+  Route parameters can be read using snapshot or using obervable 
+  
+  optional parameters are ideal while passing complex data between routes. They should come after the required parameters. 
+  we use query parameters which can work across routes and they can be retained. 
+  they are not part of route configuration. we use the [queryParams] directive 
+  By default, the router resets the query parameters. so when we navigate back, they are lost 
+  we can retain them by using `queryParamsHandling="preserve"` or `merge`
+  
+  
   
