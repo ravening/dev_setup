@@ -214,4 +214,26 @@ A component can communicate with the template or another child component using <
   we can retain them by using `queryParamsHandling="preserve"` or `merge`
   
   
+  ### route resolvers
+  
+  prefetch the data before loading the data  
+  Reuse the code  
+  improves flow when an error occurs  
+  Route has a `data` property. This can be used to pass any data. This cannot change. so it has be static data.  
+  can be accessed using this.route.snapshot.data['key']  
+  
+  Prefetching data using route ersolver includes 3 steps.  
+  1. Build a route resolver service.  
+  2. Add resolve to the router configuration.  
+  3. Read data from ActivatedRoute.  
+  
+  use this.route.snapshot.data[''] if the route never changes but if the route changes then use this.route.data.subscribe().  
+  
+  parent route can be accessed using this.route.parent.snapshot.data.  
+  
+  
+  
+  
+  
+  
   
