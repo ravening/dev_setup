@@ -232,6 +232,15 @@ A component can communicate with the template or another child component using <
   parent route can be accessed using this.route.parent.snapshot.data.  
   
   
+  Animating a route involves 4 steps.  
+  1. Import BrowserAnimationsModule.  
+  2. Define the desired animations.  
+  3. Register the animation with the component.  
+  4. Trigger the animation from the router outlet.  
+  
+  elanbelTracing: true. use this to watch routing events.  
+  React to router events by subscribing to router events.  
+  this.router.events.subscribe(routerEvent: Event => ... ).  
   
   
   
