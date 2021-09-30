@@ -182,7 +182,7 @@ A component can communicate with the template or another child component using <
   Are used by default  
   Requires url rewriting  
   
-
+  ActivatedRouteSnapshot is used to share data between routes. RouterStateSnapshot provides acces to entire route state. 
 
   Hash based (/#/welcome)  
   uses url fragments  
@@ -243,6 +243,18 @@ A component can communicate with the template or another child component using <
   this.router.events.subscribe(routerEvent: Event => ... ).  
   
   
+  secondary routes can be activated using `outlets` keyword
   
+  Router guards
   
+  1. canActivate. 
+  2. canActivateChild. 
+  3. canDeactivate. 
+  4. canLoad: prevent asynchronous routing. 
+  5. resolve: prefetch data before activting route. 
+  
+  guard processing order. 
+  canDeactivate -> canLoad -> canActivateChild -> canActivate -> resolve. 
+  
+  !! is used to return a boolean value on an object. 
   
