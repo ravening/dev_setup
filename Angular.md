@@ -258,3 +258,20 @@ A component can communicate with the template or another child component using <
   
   !! is used to return a boolean value on an object. 
   
+  
+  ### lazy loading
+  
+  use a feature module. 
+  routes are grouped under single parent. 
+  feature module must not be imported in another module. 
+  
+  configure lazy loading by adding loadChildren property.  
+  loadChildren is used for lazy loading in app-routing.module.ts. 
+  canLoad: check for criteria before loading an asynchronous route. 
+  
+  there are 3 preload strategies. 
+  1. no preload. 
+  2. preload all. 
+  3. custom
+  
+  
